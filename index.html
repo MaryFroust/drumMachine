@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metronome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="tip">
+        (Click anywhere to hear sound...)
+    </div>
+
+     <div>
+       
+        <button id ="metCounter" ></button>
+</div>
+       <!-- <input type ="number" id= "metCount" placeholder="Metronome Count" max="4"> -->
+   <!-- <div id=" metCount"></div> -->
+    <div id="checkboxes">
+        <div class="checkbox">
+        <input type="checkbox" id="hi-hat" value="hi-hat">
+        <label for="hi-hat">hi-hat</label>
+        <!-- <button id ="button" ></button> -->
+        <input id="hi-hat-timimg">
+   </div>
+   <div class ="checkbox">
+        <input type="checkbox" id="kick-drum" value="kick-drum">
+        <label for="kick-drum">kick-drum</label>
+        <input id="kick-drum-timimg">
+    </div>
+    <div class ="checkbox">
+        <input type="checkbox" id="snare-drum" value="snare-drum">
+        <label for="snare-drum">snare-drum</label>
+        <input id="snare-drum-timimg">
+    </div>
+
+    <div class ="checkbox">
+        <input type="checkbox" id="bomb-drop" value="bomb-drop">
+        <label for="bomb-drop">bomb-drop</label>
+        <input id="bomb-drop-timimg">
+    </div>
+    <div class ="checkbox">
+        <input type="checkbox" id="echo" value="echo">
+        <label for="echo">echo</label>
+        <input id="echo-timimg">
+    </div>
+    <div class ="checkbox">
+        <input type="checkbox" id="bass-pulse" value="bass-pulse">
+        <label for="">bass-pulse</label>
+        <input id="bass-pulse-timimg">
+    </div>
+    <div class ="checkbox">
+        <input type="checkbox" id="retro-alarm" value="retro=alarm">
+        <label for="">retro-alarm</label>
+        <input id="retro-alarm-timimg">
+    </div>
+   
+    <div class ="checkbox">
+        <input type="checkbox" id="metronome" value="metronome">
+        <label for="metronome">metronome</label>
+        <!-- <input id="metronome"> -->
+
+    </div>
+</div>
+    
+
+
+    <div class="metronome">
+        <div class="background-left"></div>
+        <div class="background-center">
+            <div class="core"></div>
+        </div>
+        <div class="background-right"></div>
+        <div class="arm"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
