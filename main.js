@@ -15,7 +15,10 @@ const kickCheck = document.querySelector('#kick-drum')
 const snareCheck = document.querySelector('#snare-drum')
 const hiHatCheck = document.querySelector('#hi-hat')
 const metronomeCheck = document.querySelector('#metronome')
-
+const bombDropCheck = document.querySelector('#bomb-drop')
+const echoCheck = document.querySelector('#echo')
+const bassPulseCheck = document.querySelector('#bass-pulse')
+const retroAlarmCheck = document.querySelector('#retro-alarm')
 
 const kickTiming = document.querySelector('#kick-drum')
 
@@ -37,16 +40,16 @@ function update() {
     if (snareCheck.checked) {
         snareDrum.play()
     }
-    if(bombDrop.checked){
+    if (bombDropCheck.checked) {
         bombDrop.play();
     }
-    if(echo.checked){
+    if (echoCheck.checked) {
         echo.play();
     }
-    if(bassPulse.checked){
+    if (bassPulseCheck.checked) {
         bassPulse.play();
     }
-    if(retroAlarm.checked){
+    if (retroAlarmCheck.checked) {
         retroAlarm.play();
     }
     if (metronomeCheck.checked) {
@@ -55,44 +58,45 @@ function update() {
         } else {
             tick.play();
         }
+        const metCounter = document.querySelector('#metCounter')
+        const updateCount = metCounter.innerText
+            count++
+            if (updateCount > 4) {
+               updateCount = 0
+            }
+        
+
     }
 
-const metCounter =document.querySelector('#metCounter')
-metCounter.addEventListener('click',()=>{
-    count++
-    if(count > 4){
-        count=0
-    }
-})
 
 
     if (kickCheck.checked && Number(kickTiming.value) === counter) {
-        kickDrum.play();
+            kickDrum.play();
+        }
+
+        document.body.addEventListener('click', () => {
+            const countElement = document.getElementById('metCounter')
+            countElement.innerText = 'Count: ' + count
+
+            if (metronomeClick = false) {
+                setInterval(update, 600)
+                metronomeClick = true
+            }
+        })
+
     }
 
-    document.body.addEventListener('click', () => {
-        const countElement = document.getElementById('metCounter')
-        countElement.innerText = 'Count: ' + count
 
-        if (metronomeClick = false) {
-            setInterval(update, 600)
-            metronomeClick = true
-        }
-    })
-
-}
-
-
-//    const currentCount = Number(document.querySelector('#metCount').value);//
-//    console.log(currentCount)//
+    //    const currentCount = Number(document.querySelector('#metCount').value);//
+    //    console.log(currentCount)//
 
 
 
-// This function sets up update() to be called every 600ms
-function setupUpdate() {
-    setInterval(update, 600);
-}
+    // This function sets up update() to be called every 600ms
+    function setupUpdate() {
+        setInterval(update, 600);
+    }
 
-// Call setupUpdate() once after 300ms
-setTimeout(setupUpdate, 300);
+    // Call setupUpdate() once after 300ms
+    setTimeout(setupUpdate, 300);
 // Every time the `update()` function is called, we need to update the value of this metronome count element. We can do this by determing what the current count is based on the global count variable we defined previously.
